@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="position-absolute top-0 start-0 mt-5">
+        <div className="position-absolute top-0 start-50 translate-middle-x mt-5">
           <div className="row justify-content-center">
             <div className="col-4">
               <img className="w-100" src="/youth-logo.png" alt="" />

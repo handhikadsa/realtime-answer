@@ -22,22 +22,22 @@ const Answer = ({ item }) => {
     }, [setPositionCallback]);
   
     return (
-      <div 
-        ref={ref}
-        className="text-white bg-dark p-3 rounded-3 shadow-lg"
-        style={{
-          animationName: 'flyAround',
-          animationDuration: `${Math.random() * 10 + 10}s`,
-          animationDelay: `${Math.random() * 5}s`,
-          animationIterationCount: 'infinite',
-          position: 'absolute',
-          top: position.top,
-          left: position.left,
-          transition: 'all 0.5s ease',
-          fontSize: '20px',
-        }}
-      >
-        {item.answer}
+        <div 
+            ref={ref}
+            className="text-white bg-dark p-3 rounded-3 shadow-lg"
+            style={{
+                animationName: 'flyAround',
+                animationDuration: `${Math.random() * 10 + 10}s`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationIterationCount: 'infinite',
+                position: 'absolute',
+                top: position.top,
+                left: position.left,
+                transition: 'all 0.5s ease',
+                fontSize: '20px',
+            }}
+        >
+            {item.answer}
       </div>
     );
 };  
