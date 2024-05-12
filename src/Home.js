@@ -40,7 +40,7 @@ function Home() {
           </div> :  
             <form className="w-75" onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-3">
-                <label htmlFor="answer" className="form-label mb-3" style={{fontSize: 25}}>Apa yang menjadi tantangan terbesar buat kamu dalam menjalankan ketaatan?</label>
+                <label htmlFor="answer" className="form-label mb-3" style={{fontSize: 25}}>Apa yang menjadi tantangan buat kamu dalam menjalankan ketaatan?</label>
                 <input {...register("answer")} type="text" className="form-control mb-3" id="answer" aria-describedby="answer" placeholder="tulis jawaban mu di sini!" />
               </div>
               <button type="submit" className="btn btn-primary px-5">Kirim</button>
