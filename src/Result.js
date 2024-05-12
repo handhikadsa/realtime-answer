@@ -1,5 +1,5 @@
 import './App.css';
-import { collection, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, getDocs, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from './utils/firebase';
 import { useEffect, useState, useRef, useCallback, useLayoutEffect } from 'react';
 
@@ -54,10 +54,13 @@ const Results = () => {
     const [answer, setAnswer] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "answers"), (snapshot) => {
-      const newData = snapshot.docs.map((doc) => ({...doc.data(), id:doc.id }));
-      setAnswer(newData);
-    });
+    const unsubscribe = onSnapshot(
+      query(collection(db, "answers"), orderBy("timestamp", "asc")),
+      (snapshot) => {
+        const newData = snapshot.docs.map((doc) => ({...doc.data(), id:doc.id }));
+        setAnswer(newData);
+      }
+    );
 
     // Clean up the subscription on unmount
     return () => unsubscribe();

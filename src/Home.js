@@ -12,7 +12,8 @@ function Home() {
     console.log(data)
     try {
       const docRef = await addDoc(collection(db, "answers"), {
-        answer: data.answer,    
+        answer: data.answer,
+        timestamp: new Date()    
       });
       setIsAnswered(true)
       console.log("Document written with ID: ", docRef.id);
