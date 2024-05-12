@@ -5,7 +5,6 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from './utils/firebase';
 
 function Home() {
-  const [count, setCount] = useState(0)
   const { register, handleSubmit, reset } = useForm()
   const [isAnswered, setIsAnswered] = useState(false)
   
@@ -35,16 +34,20 @@ function Home() {
         </div>
         {
           isAnswered ?
-          <div className="alert alert-success" role="alert">
-            It's okay! Roh Kudus bersamamu!
-          </div> :  
-            <form className="w-75" onSubmit={handleSubmit(onSubmit)}>
-              <div className="mb-3">
-                <label htmlFor="answer" className="form-label mb-3" style={{fontSize: 25}}>Apa yang menjadi tantangan buat kamu dalam menjalankan ketaatan?</label>
-                <input {...register("answer")} type="text" className="form-control mb-3" id="answer" aria-describedby="answer" placeholder="tulis jawaban mu di sini!" />
-              </div>
-              <button type="submit" className="btn btn-primary px-5">Kirim</button>
-            </form>
+          <>
+            <div className="alert alert-success mb-4" style={{fontSize: 22}} role="alert">
+              It's okay! Roh Kudus bersamamu!
+            </div> 
+            <button type="button" onClick={() => setIsAnswered(false)} className="btn btn-success px-5" style={{fontSize: 20}}>Kirim lagi</button>
+          </>
+          :  
+          <form className="w-75" onSubmit={handleSubmit(onSubmit)}>
+            <div className="mb-4">
+              <label htmlFor="answer" className="form-label mb-4" style={{fontSize: 25}}>Apa yang menjadi tantangan buat kamu dalam menjalankan ketaatan?</label>
+              <input {...register("answer")} type="text" className="form-control form-control-lg" id="answer" aria-describedby="answer" placeholder="tulis jawaban mu di sini!" />
+            </div>
+            <button type="submit" className="btn btn-primary px-5" style={{fontSize: 18}}>Kirim</button>
+          </form>
           }
       </header>
     </div>
