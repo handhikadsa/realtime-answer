@@ -5,7 +5,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from './utils/firebase';
 
 function Home() {
-  const { register, handleSubmit, reset } = useForm()
+  const { register, handleSubmit, reset, formState: { errors } } = useForm()
   const [isAnswered, setIsAnswered] = useState(false)
   
   const onSubmit = async (data) => {
@@ -44,7 +44,8 @@ function Home() {
           <form className="w-75" onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
               <label htmlFor="answer" className="form-label mb-4" style={{fontSize: 25}}>Apa yang menjadi tantangan buat kamu dalam menjalankan ketaatan?</label>
-              <input {...register("answer")} type="text" className="form-control form-control-lg" id="answer" aria-describedby="answer" placeholder="tulis jawaban mu di sini!" />
+              <input {...register("answer", { required: true })} type="text" className="form-control form-control-lg" id="answer" aria-describedby="answer" placeholder="tulis jawaban mu di sini!" />
+              {errors.answer && <span className="text-danger" style={{fontSize: 18}}>Kamu belum mengisi jawabanmu!</span>}
             </div>
             <button type="submit" className="btn btn-primary px-5" style={{fontSize: 18}}>Kirim</button>
           </form>
