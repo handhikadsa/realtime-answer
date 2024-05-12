@@ -17,6 +17,11 @@ code {
   max-width: 200px;
   word-wrap: break-word;
   border: 1px solid #ddd;
+
+  animation-name: flyAround;
+  animation-duration: 8s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
 }
 
 .text-container::after {
