@@ -1,6 +1,6 @@
 import './App.css';
-import { set, useForm } from "react-hook-form"
-import { useEffect, useState } from 'react';
+import { useForm } from "react-hook-form"
+import { useState } from 'react';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from './utils/firebase';
 
