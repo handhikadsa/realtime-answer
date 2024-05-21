@@ -28,7 +28,7 @@ function Home() {
       <header className="App-header">
         <div className="position-absolute top-0 start-50 translate-middle-x mt-5">
           <div className="row justify-content-center">
-            <div className="col-10 col-md-4">
+            <div className="col-10 col-md-4 col-lg-3">
               <img className="w-100" src="/youth-logo.png" alt="" />
             </div>
           </div>
