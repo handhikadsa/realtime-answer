@@ -26,13 +26,13 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="position-absolute top-0 start-50 translate-middle-x mt-5">
+        {/* <div className="position-absolute top-0 start-50 translate-middle-x mt-5">
           <div className="row justify-content-center">
             <div className="col-10 col-md-4 col-lg-3">
               <img className="w-100" src="/youth-logo.png" alt="" />
             </div>
           </div>
-        </div>
+        </div> */}
         {
           isAnswered ?
           <>
@@ -44,11 +44,11 @@ function Home() {
           :  
           <form className="w-75" onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
-              <label htmlFor="answer" className="form-label mb-4" style={{fontSize: 25}}>Apa yang menjadi tantangan buat kamu dalam menjalankan ketaatan?</label>
+              <label htmlFor="answer" className="form-label mb-4" style={{fontSize: 24}}>Apa 1 hal atau 1 aplikasi di HP yang paling sering bikin kamu "lupa waktu" dan paling susah buat kamu "Mute" (matikan/batasi) akhir-akhir ini?</label>
               <input {...register("answer", { required: true })} type="text" className="form-control form-control-lg" id="answer" aria-describedby="answer" placeholder="tulis jawaban mu di sini!" />
               {errors.answer && <span className="text-danger" style={{fontSize: 18}}>Kamu belum mengisi jawabanmu!</span>}
             </div>
-            <button type="submit" className="btn btn-primary px-5" style={{fontSize: 18}}>Kirim</button>
+            <button type="submit" className="btn btn-success px-5" style={{fontSize: 18}}>Kirim</button>
           </form>
           }
       </header>
