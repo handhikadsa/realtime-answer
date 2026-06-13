@@ -1,3 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'IosevkaCharon-Bold';
+  src: local('Helvetica-Bold'), url(./fonts/IosevkaCharon-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'HappyMonkey-Regular';
+  src: local('Helvetica-Bold'), url(./fonts/HappyMonkey-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,16 +26,27 @@ code {
     monospace;
 }
 
+.charon-bold {
+  font-family: 'IosevkaCharon-Bold';
+  font-weight: bold;
+}
+
+.monkey {
+  font-family: 'HappyMonkey-Regular';
+  font-weight: bold;
+}
+
 .text-container {
   position: relative;
   max-width: 200px;
   word-wrap: break-word;
-  border: 1px solid #ddd;
+
+ box-shadow: rgba(255, 255, 255, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  /* border: 1px solid #ddd;
 
   animation-name: flyAround;
-  /* animation-duration: 8s; */
   animation-delay: 1s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 }
 
 .text-container::after {
